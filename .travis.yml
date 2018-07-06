@@ -5,11 +5,9 @@ node_js:
 before_script:
   - npm install
 script: 
-  - yarn run test:CI
-  - npm run prebuild:CI
-  - npm run build:CI
+  - npm run test
 after_success:
-  - yarn run test:cover:CI
+  - "echo 'Scripts done running'"
 env:
 deploy:
   skip_cleanup: true
