@@ -1,7 +1,8 @@
 import React from 'react';
 import { compose, mapProps, withHandlers, pure } from 'recompose';
 import { graphql } from 'react-apollo';
-import { login } from '../tags/user'
+import { login } from '../tags/user';
+import { call, get } from '../helpers/webapi';
 
 const LoginPage = (props) => {
     console.log('props: ', props)
@@ -13,7 +14,7 @@ const LoginPage = (props) => {
             <input type="text" placeholder="password"/>
             <input type="submit" value="Login" />
         </form>
-        
+        <button onClick={props.login}>CREATE USER</button>
     </div>
     )
 };
@@ -29,15 +30,11 @@ export default compose(
     }),
     mapProps(({data, ...props}) => ({
         data,
-        login: (e) => {
-            e.preventDefault();
-            console.log('event: ', e.target.value);
-            /*fetch(`http://localhost:4000/?query={user(EMAIL:${email},PASSWORD:${password}){EMAIL,PASSWORD,SESSION_IDS}}`).then(data => {
-                console.log(data);
-                return data.json();
-            }).then(jsonData => {
-                return jsonData;
-            })*/
+        login: () => {
+            call('createUser').where({
+                EMAIL: 'bloo4@bloo.com',
+                PASSWORD: 'abc123'
+            }).returning('EMAIL');
         },
         ...props
     }))

@@ -13,7 +13,7 @@ const apiPath = window.location.hostname === 'localhost' ?
 const valuesToString = values => values.join(',')
 const paramsToString = params => Object.entries(params).map(entry => entry.join(':')).join(',')
 
-const get = (...values) => ({
+export const get = (...values) => ({
     of: (query) => ({    
         where: (params) => {
             fetch(`${apiPath}graphql?query=query{${query}(${paramsToString(params)}){${valuesToString(values)}}}`)
@@ -25,7 +25,7 @@ const get = (...values) => ({
     })
 });
 
-const call = (mutation) => ({
+export const call = (mutation) => ({
     where: (params) => ({
         returning: (...values) => {
             fetch(`${apiPath}graphql?query=mutation{${mutation}(${paramsToString(params)}){${valuesToString(values)}}}`)
