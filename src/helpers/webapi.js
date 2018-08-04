@@ -10,8 +10,14 @@
 const apiPath = window.location.hostname === 'localhost' ?
     window.location.protocol + '//' + window.location.hostname + ':4000/' :
     window.location.protocol + '/some-future-hostname-for-dynamo';
+const quoteIfString = value => typeof(value) === 'string' ? `"${value}"` : value;
 const valuesToString = values => values.join(',')
-const paramsToString = params => Object.entries(params).map(entry => entry.join(':')).join(',')
+const paramsToString = params => (
+    Object.entries(params).map(entry => {
+        entry[1] = quoteIfString(entry[1]);
+        return entry.join(':');
+    }).join(',')
+);
 
 export const get = (...values) => ({
     of: (query) => ({    
