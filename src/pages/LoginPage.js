@@ -31,14 +31,13 @@ export default compose(
     mapProps(({data, ...props}) => ({
         data,
         login: () => {
-            /*call('createUser').where({
-                EMAIL: '"bloo5@bloo.com"',
-                PASSWORD: '"abc789"'
-            }).returning('EMAIL');*/
-            get('EMAIL', 'PASSWORD').of('user').where({
+            call('createSession').where({
+                userEmail: 'test4@bloo.com'
+            }).returning('ID');
+            /*get('EMAIL', 'PASSWORD', 'SESSION_IDS').of('user').where({
                 EMAIL: 'bloo@bloo.com',
                 PASSWORD: 'abc123'
-            });
+            });*/
         },
         ...props
     }))
