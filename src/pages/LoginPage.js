@@ -31,10 +31,12 @@ export default compose(
     mapProps(({data, ...props}) => ({
         data,
         login: () => {
+            /*
+            put webapi queries here
             call('createSession').where({
                 userEmail: 'test4@bloo.com'
             }).returning('ID');
-            /*get('EMAIL', 'PASSWORD', 'SESSION_IDS').of('user').where({
+            get('EMAIL', 'PASSWORD', 'SESSION_IDS').of('user').where({
                 EMAIL: 'bloo@bloo.com',
                 PASSWORD: 'abc123'
             });*/
