@@ -17,10 +17,10 @@ export const get = (...values) => ({
     of: (query) => ({    
         where: (params) => {
             fetch(`${apiPath}graphql?query=query{${query}(${paramsToString(params)}){${valuesToString(values)}}}`)
-                .then(res => res.json())
-                .catch(err => {
-                    throw(err)
-                });
+            .then(res => res.json())
+            .catch(err => {
+                throw(err)
+            });
         }   
     })
 });
@@ -28,11 +28,13 @@ export const get = (...values) => ({
 export const call = (mutation) => ({
     where: (params) => ({
         returning: (...values) => {
-            fetch(`${apiPath}graphql?query=mutation{${mutation}(${paramsToString(params)}){${valuesToString(values)}}}`)
-                .then(res => res.json())
-                .catch(err => {
-                    throw(err)
-                });
+            fetch(`${apiPath}graphql?query=mutation{${mutation}(${paramsToString(params)}){${valuesToString(values)}}}`, {
+                method: 'POST'
+            })
+            .then(res => res.json())
+            .catch(err => {
+                throw(err)
+            });
         }
     })
 });

@@ -31,10 +31,7 @@ export default compose(
     mapProps(({data, ...props}) => ({
         data,
         login: () => {
-            call('createUser').where({
-                EMAIL: 'bloo4@bloo.com',
-                PASSWORD: 'abc123'
-            }).returning('EMAIL');
+
         },
         ...props
     }))
