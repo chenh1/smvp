@@ -12,7 +12,7 @@ const Dashboard = (props) => {
     <div>
         Dashboard:
         <MainLayout>
-            <GridModule columns={3}>
+            <GridModule bgColor={'blue'}>
                 first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item 
             </GridModule>
             <GridModule>
