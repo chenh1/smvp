@@ -8,3 +8,11 @@ export const getSession = gql`
         }
     }
 `;
+
+export const createSession = gql`
+    mutation ($userEmail: String) {
+        createSession(userEmail: $userEmail) {
+            ID
+        }
+    }
+`;

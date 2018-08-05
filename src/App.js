@@ -1,24 +1,23 @@
 import React from 'react';
-
-import { ApolloProvider } from "react-apollo";
-import ApolloClient from "apollo-boost";
+import { Switch, Route } from "react-router-dom";
 
 import LoginPage from './pages/LoginPage';
+import Dashboard from './pages/Dashboard';
+import SessionPage from './pages/SessionPage';
+import Nav from './routing/Nav';
+import PrivateRoute from './routing/PrivateRoute';
 
-
-// Ensure that uri matches server uri
-const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql"
-});
-
+// toggle authed to either go to dashboard or login page
 const App = () => (
-  <ApolloProvider client={client}>
-    <div>
-      <h2>My first Apollo app 🚀</h2>
+  <div>    
+      <Nav />  
 
-      <LoginPage />
-    </div>
-  </ApolloProvider>
+      <Switch>
+        <PrivateRoute authed={true} exact path='/' component={Dashboard} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/session" component={SessionPage} />
+      </Switch>
+  </div>
 );
 
 export default App;
