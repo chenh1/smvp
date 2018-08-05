@@ -4,11 +4,16 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 //import { login } from '../tags/user';
 //import { call, get } from '../helpers/webapi';
 
+import { MainLayout } from '../components/principles/Layouts';
+
 const Dashboard = (props) => {
     console.log('props: ', props)
     return (
     <div>
         Dashboard:
+        <MainLayout>
+            some text
+        </MainLayout>
     </div>
     )
 };
