@@ -1,33 +1,20 @@
 import React from 'react';
-
-import { Switch, Route, Link } from "react-router-dom";
-import { withRouter } from 'react-router';
+import { Switch, Route } from "react-router-dom";
 
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import SessionPage from './pages/SessionPage';
+import Nav from './routing/Nav';
+import PrivateRoute from './routing/PrivateRoute';
 
-const Nav = withRouter(() => (
-  <ul>
-    <li>
-      <Link to="/">Login Page</Link>
-    </li>
-    <li>
-      <Link to="/dashboard">Dashboard</Link>
-    </li>
-    <li>
-      <Link to="/session">Session Page</Link>
-    </li>
-  </ul>
-));
-
+// toggle authed to either go to dashboard or login page
 const App = () => (
   <div>    
       <Nav />  
 
       <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/dashboard" component={Dashboard} />
+        <PrivateRoute authed={true} exact path='/' component={Dashboard} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/session" component={SessionPage} />
       </Switch>
   </div>

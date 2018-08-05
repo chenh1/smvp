@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, mapProps, withHandlers, pure } from 'recompose';
-import { Query, Mutation, graphql } from 'react-apollo';
+import { Query, Mutation } from 'react-apollo';
 import { login } from '../tags/user';
 import { createSession } from '../tags/session';
 import { call, get } from '../helpers/webapi';
@@ -55,14 +55,6 @@ const LoginPage = (props) => {
 };
 
 export default compose(
-    graphql(login, {
-        options: () => ({
-            variables: {
-                EMAIL: 'bloo@bloo.com',
-                PASSWORD: 'abc123'
-            }
-        })
-    }),
     mapProps(({data, ...props}) => ({
         data,
         login: () => {
