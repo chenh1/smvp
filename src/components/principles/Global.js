@@ -1,9 +1,13 @@
-import { injectGlobal } from 'emotion'
+import { injectGlobal } from 'emotion';
 
 export default injectGlobal`
-  body {
-    margin: 0;
-  }
+    @import url('https://fonts.googleapis.com/css?family=Nunito:200');
+
+    body {
+        background: gray;
+        font-family: 'Nunito', sans-serif;
+        margin: 0;
+    }
 `
 
 /* 

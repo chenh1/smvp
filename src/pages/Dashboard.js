@@ -13,7 +13,8 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule bgColor={'blue'}>
-                first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item 
+                <span>first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item </span>
+                <span>first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item </span>
             </GridModule>
             <GridModule>
                 second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item 

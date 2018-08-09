@@ -42,6 +42,7 @@ export const MainLayout = styled('div')`
 export const GridModule = styled('div')`
     background-color: ${props => props.bgColor};
     border-radius: ${xs};
+    box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
     display: grid;
     grid-column-start: span ${props => props.columns || 2};
     grid-gap: ${sm} ${sm};
