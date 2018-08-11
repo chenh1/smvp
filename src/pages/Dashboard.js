@@ -6,6 +6,7 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 
 import { MainLayout, GridModule } from '../components/principles/Layouts';
 import { Input } from '../components/atomic/Input';
+import { Textfield } from '../components/molecular/Textfield';
 
 const Dashboard = (props) => {
     console.log('props: ', props)
@@ -14,7 +15,7 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule>
-                <Input />
+                <Textfield />
             </GridModule>
         </MainLayout>
     </div>
