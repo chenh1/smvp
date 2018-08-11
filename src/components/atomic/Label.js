@@ -5,5 +5,7 @@ export const Label = styled('label')`
     padding: 12px;
     pointer-events: none;
     position: absolute;
+    text-align: ${props => props.focused ? 'right' : 'left'};
+    transition: .25s;
     width: 100%;
 `;

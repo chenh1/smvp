@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import React from 'react';
+import { withState } from 'recompose';
 import { Input, Label } from '../atomic';
 
 const TextfieldBase = styled('div')`
@@ -8,9 +9,13 @@ const TextfieldBase = styled('div')`
     width: 100%;
 `;
 
-export const Textfield = ({ fullWidth }) => (
-    <TextfieldBase>
-        <Label>Some Text</Label>
-        <Input fullWidth={fullWidth}/>
-    </TextfieldBase>
+const enhance = withState('focused', 'setFocus', false);
+
+export const Textfield = enhance(
+    ({ fullWidth, setFocus, focused }) => (
+        <TextfieldBase>
+            <Label focused={focused}>Some Text</Label>
+            <Input onFocus={() => setFocus(() => true)} onBlur={() => setFocus(() => false)} fullWidth={fullWidth}/>
+        </TextfieldBase>
+    )
 );
