@@ -11,8 +11,7 @@ export const Input = styled('input')`
     font-family: ${family.nunito};
     font-size: ${size.lg};
     padding: ${spacing.xs};
-
-    width: ${props => props.fullWidth ? '100%' : 'auto'};
+    width: 100%;
 
     &:focus {
         outline: none;
