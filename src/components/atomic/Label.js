@@ -1,11 +1,16 @@
 import styled from 'react-emotion';
+import { size } from '../principles/Fonts';
 
 export const Label = styled('label')`
     box-sizing: border-box;
     padding: 12px;
     pointer-events: none;
     position: absolute;
-    text-align: ${props => props.focused ? 'right' : 'left'};
-    transition: .25s;
-    width: 100%;
+    text-align: right;
+    transition: .25s ease-out;
+    white-space: nowrap;
+
+    font-size: ${props => props.focused ? size.sm : size.lg};
+    right: ${props => props.focused ? '0%' : '100%'};
+    transform: translateX(${props => props.focused ? '0%' : '100%'});
 `;
