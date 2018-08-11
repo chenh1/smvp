@@ -15,7 +15,7 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule>
-                <Textfield />
+                <Textfield fullWidth={true}/>
             </GridModule>
         </MainLayout>
     </div>

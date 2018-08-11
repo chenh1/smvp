@@ -48,7 +48,7 @@ export const GridModule = styled('div')`
     border-radius: ${xs};
     box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
     display: grid;
-    grid-gap: ${sm} ${sm};
+    grid-gap: ${props => props.columns > 1 ? `${sm} ${sm}` : 0};
     grid-template-columns: repeat(2, 1fr);
     padding: ${sm};
 `;
