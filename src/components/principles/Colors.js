@@ -1,4 +1,12 @@
-const colors = {
+export default {
+    grays: {
+        grayOne: '#181B21',
+        grayTwo: '#212326',
+        grayThree: '#252629',
+        grayFour: '#2F3034',
+        grayFive: '#3B3E43',
+        graySix: '#D6D8DD'
+    },
     drifter: {
         //primary
         violetOne: '#171522',

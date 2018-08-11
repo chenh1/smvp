@@ -1,10 +1,12 @@
 import { injectGlobal } from 'emotion';
+import colors from './Colors';
 
 export default injectGlobal`
     @import url('https://fonts.googleapis.com/css?family=Nunito:200');
 
     body {
-        background: gray;
+        background-color: ${colors.grays.grayOne};
+        color: ${colors.grays.graySix};
         font-family: 'Nunito', sans-serif;
         margin: 0;
     }

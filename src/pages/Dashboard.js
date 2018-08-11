@@ -5,6 +5,7 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 //import { call, get } from '../helpers/webapi';
 
 import { MainLayout, GridModule } from '../components/principles/Layouts';
+import { Input } from '../components/atomic/Input';
 
 const Dashboard = (props) => {
     console.log('props: ', props)
@@ -12,18 +13,8 @@ const Dashboard = (props) => {
     <div>
         Dashboard:
         <MainLayout>
-            <GridModule bgColor={'blue'}>
-                <span>first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item </span>
-                <span>first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item first item </span>
-            </GridModule>
             <GridModule>
-                second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item second item 
-            </GridModule>
-            <GridModule>
-                third item
-            </GridModule>
-            <GridModule>
-                fourth item
+                <Input />
             </GridModule>
         </MainLayout>
     </div>

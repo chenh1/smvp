@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import spacing from './Spacing';
 import media from './Breakpoints';
 import globalStyles from './Global';
+import colors from './Colors';
 
 const { xs, sm, md, lg, xl } = spacing;
 
@@ -40,13 +41,14 @@ export const MainLayout = styled('div')`
 `;
 
 export const GridModule = styled('div')`
-    background-color: ${props => props.bgColor};
+    background-color: ${props => props.bgColor || colors.grays.grayThree};
+    grid-column-start: span ${props => props.columns || 2};
+    grid-row-start: span ${props => props.rows || 1};
+
     border-radius: ${xs};
     box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
     display: grid;
-    grid-column-start: span ${props => props.columns || 2};
     grid-gap: ${sm} ${sm};
-    grid-row-start: span ${props => props.rows || 1};
     grid-template-columns: repeat(2, 1fr);
     padding: ${sm};
 `;
