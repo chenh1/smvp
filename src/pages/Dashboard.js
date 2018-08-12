@@ -7,6 +7,7 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 import { MainLayout, GridModule } from '../components/principles/Layouts';
 import { Input } from '../components/atomic/Input';
 import { Textfield } from '../components/molecular/Textfield';
+import { Button } from '../components/atomic/Button';
 
 const Dashboard = (props) => {
     console.log('props: ', props)
@@ -16,6 +17,7 @@ const Dashboard = (props) => {
         <MainLayout>
             <GridModule>
                 <Textfield fullWidth={true}/>
+                <Button fullWidth={true}>Click me</Button>
             </GridModule>
         </MainLayout>
     </div>
