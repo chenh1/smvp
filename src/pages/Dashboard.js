@@ -12,7 +12,7 @@ import { Form } from '../components/organisms/Form';
 
 const fields = [
     {labelText: 'Email', id: 'email'},
-    {labelText: 'Password', id: 'pw'},
+    {labelText: 'Password', id: 'pw', type: 'password'},
 ];
 
 const Dashboard = (props) => {

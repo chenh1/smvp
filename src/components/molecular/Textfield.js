@@ -29,10 +29,11 @@ const enhance = withStateHandlers(
 );
 
 export const Textfield = enhance(
-    ({ fullWidth, labelText, focused, shrinkInputAreaBy, onFocus, onBlur }) => (
+    ({ fullWidth, labelText, inputType, focused, shrinkInputAreaBy, onFocus, onBlur }) => (
         <TextfieldBase fullWidth={fullWidth}>
             <Label focused={focused}>{labelText}</Label>
             <Input 
+                type={inputType}
                 shrinkInputAreaBy={shrinkInputAreaBy}
                 onFocus={(e) => onFocus(window.getComputedStyle(e.target.parentElement.querySelector('label'), null).getPropertyValue("width"))} 
                 onBlur={(e) => e.target.value === '' && onBlur()} 
