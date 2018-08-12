@@ -29,9 +29,9 @@ const enhance = withStateHandlers(
 );
 
 export const Textfield = enhance(
-    ({ fullWidth, focused, shrinkInputAreaBy, onFocus, onBlur }) => (
+    ({ fullWidth, labelText, focused, shrinkInputAreaBy, onFocus, onBlur }) => (
         <TextfieldBase fullWidth={fullWidth}>
-            <Label focused={focused}>Some Text</Label>
+            <Label focused={focused}>{labelText}</Label>
             <Input 
                 shrinkInputAreaBy={shrinkInputAreaBy}
                 onFocus={(e) => onFocus(window.getComputedStyle(e.target.parentElement.querySelector('label'), null).getPropertyValue("width"))} 

@@ -5,9 +5,9 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 //import { call, get } from '../helpers/webapi';
 
 import { MainLayout, GridModule } from '../components/principles/Layouts';
-import { Input } from '../components/atomic/Input';
 import { Textfield } from '../components/molecular/Textfield';
-import { Button } from '../components/atomic/Button';
+import { SubmitButton } from '../components/atomic/Buttons';
+import { Paragraph } from '../components/atomic/Paragraph';
 
 const Dashboard = (props) => {
     console.log('props: ', props)
@@ -16,8 +16,9 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule>
-                <Textfield fullWidth={true}/>
-                <Button fullWidth={true}>Click me</Button>
+                <Paragraph>Some p text stuff</Paragraph>
+                <Textfield fullWidth={true} labelText={'email'}/>
+                <SubmitButton fullWidth={true} text={'Click Me'}/>
             </GridModule>
         </MainLayout>
     </div>
