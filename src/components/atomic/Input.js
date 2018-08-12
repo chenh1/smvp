@@ -11,6 +11,7 @@ export const Input = styled('input')`
     font-family: ${family.nunito};
     font-size: ${size.lg};
     padding: ${spacing.xs};
+    padding-right: ${props => props.shrinkInputAreaBy};
     width: 100%;
 
     &:focus {

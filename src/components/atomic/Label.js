@@ -2,6 +2,7 @@ import styled from 'react-emotion';
 import { size } from '../principles/Fonts';
 
 export const Label = styled('label')`
+    bottom: 0;
     box-sizing: border-box;
     padding: 12px;
     pointer-events: none;
