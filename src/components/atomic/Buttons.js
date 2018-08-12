@@ -20,7 +20,7 @@ const buttonStyle = css`
 
 const fullWidth = css`
     grid-column: 1 / -1;
-    width: 100%'
+    width: 100%;
 `;
 
 export const Button = styled('button')`
