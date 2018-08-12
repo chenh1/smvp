@@ -5,7 +5,15 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 //import { call, get } from '../helpers/webapi';
 
 import { MainLayout, GridModule } from '../components/principles/Layouts';
-import { Input } from '../components/atomic/Input';
+import { Textfield } from '../components/molecular/Textfield';
+import { SubmitButton } from '../components/atomic/Buttons';
+import { Paragraph } from '../components/atomic/Paragraph';
+import { Form } from '../components/organisms/Form';
+
+const fields = [
+    {labelText: 'Email', id: 'email'},
+    {labelText: 'Password', id: 'pw', type: 'password'},
+];
 
 const Dashboard = (props) => {
     console.log('props: ', props)
@@ -14,7 +22,11 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule>
-                <Input />
+                <Paragraph>Some p text stuff</Paragraph>
+                <Textfield fullWidth={true} labelText={'email'}/>
+                <SubmitButton fullWidth={true} text={'Click Me'}/>
+            
+                <Form onSubmit={(e)=>e.preventDefault()} fullWidth={true} submitText={'Login'} headingText={'Login Form'} fields={fields}/>
             </GridModule>
         </MainLayout>
     </div>
