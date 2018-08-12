@@ -26,7 +26,7 @@ const Dashboard = (props) => {
                 <Textfield fullWidth={true} labelText={'email'}/>
                 <SubmitButton fullWidth={true} text={'Click Me'}/>
             
-                <Form onSubmit={()=>true} fullWidth={true} submitText={'Login'} headingText={'Login Form'} fields={fields}/>
+                <Form onSubmit={(e)=>e.preventDefault()} fullWidth={true} submitText={'Login'} headingText={'Login Form'} fields={fields}/>
             </GridModule>
         </MainLayout>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
+import spacing from '../principles/Spacing';
 import { Textfield } from '../molecular/Textfield';
 import { SubmitButton } from '../atomic/Buttons';
 import { Heading } from '../atomic/Heading';
@@ -11,6 +12,9 @@ const fullWidth = css`
 
 const FormBase = styled('form')`
     ${props => props.fullWidth && fullWidth}
+
+    display: grid;
+    grid-gap: ${spacing.sm} ${spacing.sm};
 `;
 
 /* 

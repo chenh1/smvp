@@ -14,6 +14,9 @@ const buttonStyle = css`
 
     &:active {
         background-color: ${colors.electric.blueGreenTwo};
+    }
+
+    &:focus {
         outline: 0;
     }
 `;
