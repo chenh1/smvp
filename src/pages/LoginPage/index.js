@@ -5,21 +5,19 @@ import { login } from '../../tags/user';
 import { createSession } from '../../tags/session';
 import { call, get } from '../../helpers/webapi';
 
+import { MainLayout, GridModule } from '../../components/principles/Layouts';
+import { LoginForm } from './modules/LoginForm';
+
 const LoginPage = (props) => {
     console.log('props: ', props);
     const EMAIL = 'bloo@bloo.com';
     const PASSWORD = 'abc123';
     
     return (
-        <div>
-            Login:
-            <form onSubmit={props.login}>
-                <input type="text" placeholder="email"/>
-                <input type="text" placeholder="password"/>
-                <input type="submit" value="Login" />
-            </form>
-            <button onClick={props.login}>CREATE USER</button>
-
+        <MainLayout>
+            <GridModule>
+                <LoginForm />
+            </GridModule>
             
             <Query query={login} variables={{ EMAIL, PASSWORD }} skip={!EMAIL && !PASSWORD}>
                 {({ loading, error, data }) => {
@@ -50,7 +48,7 @@ const LoginPage = (props) => {
                     </div>
                 )}
             </Mutation>
-        </div>
+        </MainLayout>
     )
 };
 
