@@ -12,7 +12,6 @@ const fullWidth = css`
 
 const FormBase = styled('form')`
     ${props => props.fullWidth && fullWidth}
-
     display: grid;
     grid-gap: ${spacing.sm} ${spacing.sm};
 `;
@@ -23,8 +22,8 @@ const FormBase = styled('form')`
     ]
 */
 
-export const Form = ({ onSubmit, fullWidth, submitText, headingText, fields }) => (
-    <FormBase onSubmit={onSubmit} fullWidth={fullWidth}>
+export const Form = ({ columnStart, onSubmit, fullWidth, submitText, headingText, fields }) => (
+    <FormBase columnStart={columnStart} onSubmit={onSubmit} fullWidth={fullWidth}>
         <Heading size={1}>{headingText}</Heading>
         {fields.map(({ labelText, id, type }, i) => (
             <Textfield fullWidth={fullWidth} inputType={type} key={i} labelText={labelText} id={id}/>

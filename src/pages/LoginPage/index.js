@@ -15,7 +15,7 @@ const LoginPage = (props) => {
     
     return (
         <MainLayout>
-            <GridModule>
+            <GridModule columnStart={2}>
                 <LoginForm />
             </GridModule>
             
