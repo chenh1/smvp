@@ -1,9 +1,9 @@
 import React from 'react';
 import { compose, mapProps, withHandlers, pure } from 'recompose';
 import { Query, Mutation } from 'react-apollo';
-import { login } from '../tags/user';
-import { createSession } from '../tags/session';
-import { call, get } from '../helpers/webapi';
+import { login } from '../../tags/user';
+import { createSession } from '../../tags/session';
+import { call, get } from '../../helpers/webapi';
 
 const LoginPage = (props) => {
     console.log('props: ', props);

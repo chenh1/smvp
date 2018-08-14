@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import LoginPage from './pages/LoginPage';
-import Dashboard from './pages/Dashboard';
-import SessionPage from './pages/SessionPage';
+import { LoginPage } from './pages';
+import { Dashboard } from './pages';
+import { SessionPage } from './pages';
 import Nav from './routing/Nav';
 import PrivateRoute from './routing/PrivateRoute';
 

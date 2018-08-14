@@ -4,11 +4,11 @@ import { compose, mapProps, withHandlers, pure } from 'recompose';
 //import { login } from '../tags/user';
 //import { call, get } from '../helpers/webapi';
 
-import { MainLayout, GridModule } from '../components/principles/Layouts';
-import { Textfield } from '../components/molecular/Textfield';
-import { SubmitButton } from '../components/atomic/Buttons';
-import { Paragraph } from '../components/atomic/Paragraph';
-import { Form } from '../components/organisms/Form';
+import { MainLayout, GridModule } from '../../components/principles/Layouts';
+import { Textfield } from '../../components/molecular/Textfield';
+import { SubmitButton } from '../../components/atomic/Buttons';
+import { Paragraph } from '../../components/atomic/Paragraph';
+import { Form } from '../../components/organisms/Form';
 
 const fields = [
     {labelText: 'Email', id: 'email'},
