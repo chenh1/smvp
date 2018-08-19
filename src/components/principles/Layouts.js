@@ -42,8 +42,8 @@ export const MainLayout = styled('div')`
 
 export const GridModule = styled('div')`
     background-color: ${props => props.bgColor || colors.grays.grayThree};
-    grid-column-start: span ${props => props.columns || 2};
-    grid-row-start: span ${props => props.rows || 1};
+    grid-column: ${props => props.columnStart || 1} / span ${props => props.columns || 2};
+    grid-row: ${props => props.rowStart || 1} / span ${props => props.rows || 1};
 
     border-radius: ${xs};
     box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
