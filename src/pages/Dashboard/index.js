@@ -36,3 +36,36 @@ const Dashboard = (props) => {
 export default compose(
     // Throw stuff here
 )(Dashboard);
+
+
+/*
+<Query query={login} variables={{ EMAIL, PASSWORD }} skip={!EMAIL && !PASSWORD}>
+                {({ loading, error, data }) => {
+                    if (loading) return <div>Fetching</div>
+                    if (error) return <div>Error</div>
+            
+                    console.log('data:', data);
+            
+                    return (
+                    <div>
+                        it loaded
+                    </div>
+                    )
+                }}
+            </Query>
+
+            <Mutation mutation={createSession}>
+                {(runCreateSession, { data }) => (
+                    <div>
+                        <button onClick={
+                            () => {
+                                runCreateSession({ variables: { userEmail: 'test4@bloo.com' } });
+                            }
+                        }>
+                            CREATE SESSION
+                        </button>
+                        
+                    </div>
+                )}
+            </Mutation>
+            */

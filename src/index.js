@@ -6,10 +6,7 @@ import { ApolloProvider } from "react-apollo";
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
-const client = new ApolloClient({
-    uri: "http://localhost:4000/graphql"
-});
+import client from './client';
 
 ReactDOM.render(
     <BrowserRouter>
