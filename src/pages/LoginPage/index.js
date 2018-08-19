@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { compose, mapProps, withHandlers, pure } from 'recompose';
 import { ApolloConsumer, Query, Mutation, graphql } from 'react-apollo';
 import { loginTag } from '../../tags/user';
@@ -25,6 +26,7 @@ const LoginPage = ({ login }) => {
 };
 
 export default compose(
+    withRouter,
     mapProps(({data, ...props}) => ({
         data,
         login: (e) => {
@@ -34,9 +36,9 @@ export default compose(
                 query: loginTag,
                 variables: formData
             }).then(res => {
-                console.log(props.loginSuccess)
                 console.log('RES:::', res, props)
                 props.loginSuccess(res.data.user[0])
+                props.history.push('/')
             }).catch(error => {
                 console.log(error)
             });

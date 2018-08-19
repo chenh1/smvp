@@ -13,7 +13,7 @@ const App = ({ authed, email, sessionIds, loginSuccess }) => (
 
       <Switch>
         <PrivateRoute authed={authed} exact path='/' component={Dashboard} />
-        <Route path="/login" render={() => <LoginPage loginSuccess={loginSuccess} />} />
+        <Route path="/login" render={() => <LoginPage loginSuccess={loginSuccess} {...this.props}/>} />
         <Route path="/session" component={SessionPage} />
       </Switch>
   </div>
