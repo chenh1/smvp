@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router';
 
-export default withRouter(() => (
+export default () => (
     <ul>
         <li>
             <Link to="/">Dashboard Page</Link>
@@ -11,4 +11,4 @@ export default withRouter(() => (
             <Link to="/session">Session Page</Link>
         </li>
     </ul>
-));
+);

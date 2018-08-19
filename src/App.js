@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-import { withStateHandlers } from 'recompose';
+import { compose, withStateHandlers } from 'recompose';
 
 import { LoginPage, Dashboard, SessionPage } from './pages';
 import Nav from './routing/Nav';
 import PrivateRoute from './routing/PrivateRoute';
-
+import { withRouter } from 'react-router';
 // toggle authed to either go to dashboard or login page
 const App = ({ authed, email, sessionIds, loginSuccess }) => (
   <div>    
@@ -19,17 +19,20 @@ const App = ({ authed, email, sessionIds, loginSuccess }) => (
   </div>
 );
 
-export default withStateHandlers(
-  () => ({
-    authed: false,
-    email: '',
-    sessionIds: []
-  }),
-  {
-    loginSuccess: () => ({ EMAIL, SESSION_IDS }) => ({
-      authed: true,
-      email: EMAIL,
-      sessionIds: SESSION_IDS
-    })
-  }
+export default compose(
+  withRouter,
+  withStateHandlers(
+    () => ({
+      authed: false,
+      email: '',
+      sessionIds: []
+    }),
+    {
+      loginSuccess: () => ({ EMAIL, SESSION_IDS }) => ({
+        authed: true,
+        email: EMAIL,
+        sessionIds: SESSION_IDS
+      })
+    }
+  )
 )(App);

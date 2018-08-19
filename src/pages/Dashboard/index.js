@@ -9,6 +9,7 @@ import { Textfield } from '../../components/molecular/Textfield';
 import { SubmitButton } from '../../components/atomic/Buttons';
 import { Paragraph } from '../../components/atomic/Paragraph';
 import { Form } from '../../components/organisms/Form';
+import { withRouter } from 'react-router';
 
 const fields = [
     {labelText: 'Email', id: 'email'},
