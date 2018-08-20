@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { compose, mapProps, withStateHandlers, pure } from 'recompose';
-import { loginTag, createUserTag } from '../../tags/user';
+import { user, createUser } from '../../tags/user';
 import { call, get } from '../../helpers/webapi';
 import { MainLayout, GridModule } from '../../components/principles/Layouts';
 import { LoginForm, RegistrationForm, FormToggler } from './modules';
@@ -40,7 +40,7 @@ export default compose(
             e.preventDefault();
             const formData = serializeForm(e.target);
             client.query({
-                query: loginTag,
+                query: user,
                 variables: formData
             }).then(res => {
                 props.loginSuccess(res.data.user[0])
@@ -53,7 +53,7 @@ export default compose(
             e.preventDefault();
             const formData = serializeForm(e.target);
             client.mutate({
-                mutation: createUserTag,
+                mutation: createUser,
                 variables: formData
             }).then(res => {
                 props.loginSuccess({ EMAIL: formData.EMAIL, SESSION_IDS: [] });
