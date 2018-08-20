@@ -1,14 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { compose, mapProps, withStateHandlers, pure } from 'recompose';
-import { ApolloConsumer, Query, Mutation, graphql } from 'react-apollo';
 import { loginTag, createUserTag } from '../../tags/user';
-import { createSession } from '../../tags/session';
 import { call, get } from '../../helpers/webapi';
 import { MainLayout, GridModule } from '../../components/principles/Layouts';
-import { LoginForm } from './modules/LoginForm';
-import { FormToggler } from './modules/FormToggler';
-import { RegistrationForm } from './modules/RegistrationForm';
+import { LoginForm, RegistrationForm, FormToggler } from './modules';
 import client from '../../client';
 import serializeForm from '../../helpers/formSerializer';
 
@@ -47,7 +43,6 @@ export default compose(
                 query: loginTag,
                 variables: formData
             }).then(res => {
-                console.log('RES:::', res, props)
                 props.loginSuccess(res.data.user[0])
                 props.history.push('/')
             }).catch(error => {
@@ -61,7 +56,8 @@ export default compose(
                 mutation: createUserTag,
                 variables: formData
             }).then(res => {
-                console.log('MUTATE RES:::', res)
+                props.loginSuccess({ EMAIL: formData.EMAIL, SESSION_IDS: [] });
+                props.history.push('/');
             }).catch(error => {
                 console.log(error);
             });
