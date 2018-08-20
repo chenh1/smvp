@@ -12,13 +12,13 @@ import { RegistrationForm } from './modules/RegistrationForm';
 import client from '../../client';
 import serializeForm from '../../helpers/formSerializer';
 
-const LoginPage = ({ login, isLoginModule, toggleForm }) => (
+const LoginPage = ({ login, isLoginModule, toggleForm, register }) => (
     <MainLayout>
         <GridModule columnStart={2}>
             {isLoginModule ? 
                 <LoginForm onSubmit={login} />
                 :
-                <RegistrationForm onSubmit={login} />
+                <RegistrationForm onSubmit={register} />
             }
             
             <FormToggler isLoginModule={isLoginModule} toggleForm={toggleForm} />
