@@ -52,3 +52,7 @@ export const GridModule = styled('div')`
     grid-template-columns: repeat(2, 1fr);
     padding: ${sm};
 `;
+
+export const Stretcher = styled('div')`
+    grid-column: 1 / -1;
+`;

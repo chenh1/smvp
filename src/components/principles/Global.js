@@ -10,6 +10,12 @@ export default injectGlobal`
         font-family: 'Nunito', sans-serif;
         margin: 0;
     }
+
+    a {
+        &:visited {
+            color: ${colors.electric.blueGreenThree};
+        }
+    }
 `
 
 /* 

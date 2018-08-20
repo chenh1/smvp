@@ -7,7 +7,6 @@ const fields = [
     {labelText: 'Password', id: 'PASSWORD', type: 'password'},
 ];
 
-
 export const LoginForm = ({ onSubmit }) => (
     <Form
         onSubmit={onSubmit}

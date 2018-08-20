@@ -23,11 +23,7 @@ const Dashboard = (props) => {
         Dashboard:
         <MainLayout>
             <GridModule>
-                <Paragraph>Some p text stuff</Paragraph>
-                <Textfield fullWidth={true} labelText={'email'}/>
-                <SubmitButton fullWidth={true} text={'Click Me'}/>
-            
-                <Form onSubmit={(e)=>e.preventDefault()} fullWidth={true} submitText={'Login'} headingText={'Login Form'} fields={fields}/>
+                WELCOME TO YOUR DASHBOARD
             </GridModule>
         </MainLayout>
     </div>
