@@ -9,3 +9,13 @@ export const loginTag = gql`
         }
     }
 `;
+
+export const createUserTag = gql`
+    mutation ($EMAIL: String, $PASSWORD: String) {
+        createUser (EMAIL: $EMAIL, PASSWORD: $PASSWORD) {
+            EMAIL
+            PASSWORD
+            SESSION_IDS
+        }
+    }
+`;

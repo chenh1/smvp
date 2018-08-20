@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { compose, mapProps, withStateHandlers, pure } from 'recompose';
 import { ApolloConsumer, Query, Mutation, graphql } from 'react-apollo';
-import { loginTag } from '../../tags/user';
+import { loginTag, createUserTag } from '../../tags/user';
 import { createSession } from '../../tags/session';
 import { call, get } from '../../helpers/webapi';
 import { MainLayout, GridModule } from '../../components/principles/Layouts';
@@ -52,6 +52,18 @@ export default compose(
                 props.history.push('/')
             }).catch(error => {
                 console.log(error)
+            });
+        },
+        register: (e) => {
+            e.preventDefault();
+            const formData = serializeForm(e.target);
+            client.mutate({
+                mutation: createUserTag,
+                variables: formData
+            }).then(res => {
+                console.log('MUTATE RES:::', res)
+            }).catch(error => {
+                console.log(error);
             });
         },
         ...props
