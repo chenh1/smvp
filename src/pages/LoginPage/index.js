@@ -8,13 +8,19 @@ import { call, get } from '../../helpers/webapi';
 import { MainLayout, GridModule } from '../../components/principles/Layouts';
 import { LoginForm } from './modules/LoginForm';
 import { FormToggler } from './modules/FormToggler';
+import { RegistrationForm } from './modules/RegistrationForm';
 import client from '../../client';
 import serializeForm from '../../helpers/formSerializer';
 
 const LoginPage = ({ login, isLoginModule, toggleForm }) => (
     <MainLayout>
         <GridModule columnStart={2}>
-            <LoginForm onSubmit={login} />
+            {isLoginModule ? 
+                <LoginForm onSubmit={login} />
+                :
+                <RegistrationForm onSubmit={login} />
+            }
+            
             <FormToggler isLoginModule={isLoginModule} toggleForm={toggleForm} />
         </GridModule>
     </MainLayout>
